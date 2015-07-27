@@ -1,5 +1,4 @@
 package com.fotoplace.http.user;
-import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
 import com.fotoplace.http.jsons.UserServiceJSON;
@@ -7,7 +6,6 @@ import com.fotoplace.user.test.modl.UserRegister;
 import com.pajk.test.client.JsonRequestUtil;
 import com.pajk.test.client.ResultDO;
 import com.pajk.test.database.DBInfo;
-import com.pajk.test.database.DBOperate;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -29,7 +27,7 @@ public class AddUserServiceIT{
 	    
    }  
 	 */
-    @Test(description = "新增用户信息-正常场景，创建人：郭强")
+    @Test(description = "新增用户-正常场景，创建人：郭强")
     public void addUser_normal() throws Exception{
     	
     	String addUserJson =  UserServiceJSON.CreateUserServiceJson("12", "13774294435", "123456", "5623", "ios7.0", "ios", "3345" );
@@ -47,7 +45,7 @@ public class AddUserServiceIT{
     	UserRegister userinfo = new UserRegister();
     	userinfo = JSON.parseObject(reg_json, UserRegister.class);
     	
-    	
+    	//assert校验返回字段
         Assert.assertEquals(userinfo.getOsType(), "ios");    
         Assert.assertEquals(userinfo.getMobile(), "13774294435");
         Assert.assertEquals(userinfo.getPassword(), "123456");
@@ -55,10 +53,9 @@ public class AddUserServiceIT{
         Assert.assertEquals(userinfo.getCaptcha(), "5623");
         Assert.assertEquals(userinfo.getSeriesNumber(), "3345");
         Assert.assertEquals(userinfo.getClientVersion(), "ios7.0");	
-        
+   
         String userJson =  JSON.toJSONString(userinfo, true);
         System.out.println("json" +userJson);
-        
         
     }
 }

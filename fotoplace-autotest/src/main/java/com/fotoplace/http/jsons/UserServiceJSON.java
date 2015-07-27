@@ -1,9 +1,8 @@
-package com.fotoplace.http.jsons;
-import javax.servlet.http.HttpSession;
 
+package com.fotoplace.http.jsons;
 import com.alibaba.fastjson.JSON;
+import com.fotoplace.user.test.modl.UserLogin;
 import com.fotoplace.user.test.modl.UserRegister;
- 
 
 /**
  * 类UserServiceJSON.java的实现描述：TODO 类实现描述
@@ -23,11 +22,8 @@ public class UserServiceJSON
      * @param seriesNumber  
      * 
      */
-	
      public static String CreateUserServiceJson(String countryNo,String mobile,String password
-    		                                   ,String captcha,String clientVersion,String osType,String seriesNumber
-    		                                 ,HttpSession http  ){
-     
+    		                                   ,String captcha,String clientVersion,String osType,String seriesNumber){
     	 
         UserRegister reg =  new UserRegister();
         reg.setMobile(mobile);
@@ -46,5 +42,18 @@ public class UserServiceJSON
 		 return userJson;
     	 
      }
+     
+     public static String UserloginJson(String emailphone,String password){
+    	 
+    	 UserLogin loginJson = new UserLogin();
+    	 loginJson.setEmailphone(emailphone);
+    	 loginJson.setPassword(password);
+    	 
+    	 String userJson =  JSON.toJSONString(loginJson);
+   	 
+		 return userJson;
+    	 
+     }
 	
 }
+ 
