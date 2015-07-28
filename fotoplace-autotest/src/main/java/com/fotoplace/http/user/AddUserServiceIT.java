@@ -24,7 +24,7 @@ public class AddUserServiceIT{
 	    String paysql = "delete from user_profile where mobile='13774294435' ";
 	   DBOperate.execute(conn, paysql);
 	   Thread.sleep(2000);
-	    
+	    d
    }  
 	 */
     @Test(description = "新增用户-正常场景，创建人：郭强")

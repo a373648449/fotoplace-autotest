@@ -1,6 +1,7 @@
 
 package com.fotoplace.http.jsons;
 import com.alibaba.fastjson.JSON;
+import com.fotoplace.user.test.modl.NewPassword;
 import com.fotoplace.user.test.modl.UserLogin;
 import com.fotoplace.user.test.modl.UserRegister;
 import com.fotoplace.user.test.modl.UserThirdLogin;
@@ -102,6 +103,20 @@ public class UserServiceJSON
     	 
 		 return userJson;
     	 
+    	 
+     }
+     
+     public static String NewPasswordJson(String captcha,String password,String userName){
+    	 
+    	 NewPassword  newpassword = new NewPassword();
+         newpassword.setCaptcha(captcha);
+         newpassword.setPassword(password);
+         newpassword.setUserName(userName);
+         
+         String newpassword_Json =  JSON.toJSONString(newpassword, true);
+         System.out.println("newpassword-----" +newpassword_Json);
+    	 
+		 return newpassword_Json;
     	 
      }
 	
