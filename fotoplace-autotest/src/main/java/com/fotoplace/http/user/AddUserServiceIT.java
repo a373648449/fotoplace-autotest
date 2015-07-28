@@ -2,7 +2,7 @@ package com.fotoplace.http.user;
 
 import com.alibaba.fastjson.JSON;
 import com.fotoplace.http.jsons.UserServiceJSON;
-import com.fotoplace.user.test.modl.UserRegister;
+import com.fotoplace.user.test.modl.UserRegisterIT;
 import com.pajk.test.client.JsonRequestUtil;
 import com.pajk.test.client.ResultDO;
 import com.pajk.test.database.DBInfo;
@@ -42,8 +42,8 @@ public class AddUserServiceIT{
     	
     	
     	String reg_json =  respone.getResultString();
-    	UserRegister userinfo = new UserRegister();
-    	userinfo = JSON.parseObject(reg_json, UserRegister.class);
+    	UserRegisterIT userinfo = new UserRegisterIT();
+    	userinfo = JSON.parseObject(reg_json, UserRegisterIT.class);
     	
     	//assert校验返回字段
         Assert.assertEquals(userinfo.getOsType(), "ios");    

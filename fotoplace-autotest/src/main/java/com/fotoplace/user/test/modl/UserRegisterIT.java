@@ -1,6 +1,6 @@
 package com.fotoplace.user.test.modl;
 
-public class UserRegister{
+public class UserRegisterIT{
  
     // 国家编码
     private String countryNo;

@@ -1,8 +1,8 @@
 
 package com.fotoplace.http.jsons;
 import com.alibaba.fastjson.JSON;
-import com.fotoplace.user.test.modl.UserLogin;
-import com.fotoplace.user.test.modl.UserRegister;
+import com.fotoplace.user.test.modl.UserLoginIT;
+import com.fotoplace.user.test.modl.UserRegisterIT;
 
 /**
  * 类UserServiceJSON.java的实现描述：TODO 类实现描述
@@ -25,7 +25,7 @@ public class UserServiceJSON
      public static String CreateUserServiceJson(String countryNo,String mobile,String password
     		                                   ,String captcha,String clientVersion,String osType,String seriesNumber){
     	 
-        UserRegister reg =  new UserRegister();
+        UserRegisterIT reg =  new UserRegisterIT();
         reg.setMobile(mobile);
         reg.setPassword(password);
         reg.setCaptcha(captcha);
@@ -37,20 +37,33 @@ public class UserServiceJSON
         
     	 String userJson =  JSON.toJSONString(reg, true);
     	 
-    	 System.out.println(userJson);
+    	 System.out.println("CreateUserServiceJson---"+userJson);
     			  	 
 		 return userJson;
     	 
      }
      
-     public static String UserloginJson(String emailphone,String password){
+
+	 /**
+	  * 
+     * @param username  用户名
+     * @param password  密码
+     * @param seriesNumber 序列号
+     * @param clientVersion 客户端版本号
+     * @param osType 手机型号
+     */
+     public static String UserloginJson(String userName,String password,String seriesNumber,String clientVersion,String osType){
     	 
-    	 UserLogin loginJson = new UserLogin();
-    	 loginJson.setEmailphone(emailphone);
-    	 loginJson.setPassword(password);
+    	 UserLoginIT loginreg = new UserLoginIT();
+    	 loginreg.setUserName(userName);
+    	 loginreg.setPassword(password);
+    	 loginreg.setSeriesNumber(seriesNumber);
+    	 loginreg.setClientVersion(clientVersion);
+    	 loginreg.setOsType(osType);
     	 
-    	 String userJson =  JSON.toJSONString(loginJson);
-   	 
+    	 String userJson =  JSON.toJSONString(loginreg,true);
+   	     System.out.println("userlogin----"+userJson);
+   	     
 		 return userJson;
     	 
      }

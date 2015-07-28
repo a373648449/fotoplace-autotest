@@ -1,23 +1,24 @@
 package com.fotoplace.http.user;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.alibaba.fastjson.JSON;
 import com.fotoplace.http.jsons.UserServiceJSON;
-import com.fotoplace.user.test.modl.UserLogin;
+import com.fotoplace.user.test.modl.UserLoginIT;
 import com.pajk.test.client.JsonRequestUtil;
 import com.pajk.test.client.ResultDO;
 import com.pajk.test.database.DBInfo;
 
-public class UserLoginIT {
+public class UserLoginServiceIT {
 	
 	public static final String conn =  DBInfo.getConn("fotoplaceDB");
 	public static final String serverIP = DBInfo.getConn("serverIP");
 	
-		 
+	 @Test(description = "用户登录-正常场景，创建人：郭强")	 
       public void getUserLogin_normal() throws Exception {
     	
-    	String userlogin_Json = UserServiceJSON.UserloginJson("13774294435", "123456");
+    	String userlogin_Json = UserServiceJSON.UserloginJson("13774294435", "123456","23","2.1.2","Android4.3.3");
     	
     	String url = "http://" + serverIP + "/api/user/user_login.php";
     	
@@ -29,15 +30,19 @@ public class UserLoginIT {
     	
         
     	String reg =  respone.getResultString();
-    	UserLogin userlogin = new UserLogin();
+    	UserLoginIT userlogin =  new UserLoginIT();
     	userlogin = JSON.parseObject(reg, userlogin.getClass());
     	
-    	Assert.assertEquals(userlogin.getEmailphone(), "13774294435");
+    	Assert.assertEquals(userlogin.getUserName(), "13774294435");
     	Assert.assertEquals(userlogin.getPassword(), "123456");
+    	Assert.assertEquals(userlogin.getSeriesNumber(), "23");
+    	Assert.assertEquals(userlogin.getOsType(), "Android4.3.3");
+    	Assert.assertEquals(userlogin.getClientVersion(), "2.1.2");
     	
         String userJson =  JSON.toJSONString(userlogin, true);
         System.out.println("json" +userJson);
     	
+        
     	
     	
     }
