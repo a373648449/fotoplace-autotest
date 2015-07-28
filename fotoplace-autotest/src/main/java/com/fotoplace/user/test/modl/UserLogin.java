@@ -1,7 +1,7 @@
 package com.fotoplace.user.test.modl;
  
 
-public class UserLoginIT {
+public class UserLogin {
     
 	    private String userName;
 

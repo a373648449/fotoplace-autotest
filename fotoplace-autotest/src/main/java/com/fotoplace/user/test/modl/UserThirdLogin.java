@@ -1,6 +1,6 @@
 package com.fotoplace.user.test.modl;
  
-public class UserThirdLoginIT {
+public class UserThirdLogin {
 	
 	// 手机操作系统类型
  
