@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.fotoplace.http.user.AddUserServiceIT">
+      <class name="com.fotoplace.http.user.UserLoginServiceIT">
         <methods>
-          <include name="addUser_normal"/>
+          <include name="UserLogin_normal"/>
         </methods>
-      </class> <!-- com.fotoplace.http.user.AddUserServiceIT -->
+      </class> <!-- com.fotoplace.http.user.UserLoginServiceIT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

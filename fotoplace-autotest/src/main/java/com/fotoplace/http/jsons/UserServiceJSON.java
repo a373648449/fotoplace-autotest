@@ -106,10 +106,17 @@ public class UserServiceJSON
     	 
      }
      
-     public static String NewPasswordJson(String captcha,String password,String userName){
+     /**
+      *@author guoqiang
+ 	  *@see第三方登录
+      *@param uid 
+      *@param userName 用户名
+      *@param password 密码
+      */
+     public static String NewPasswordJson(long uid,String password,String userName){
     	 
     	 NewPassword  newpassword = new NewPassword();
-         newpassword.setCaptcha(captcha);
+         newpassword.setUid(uid);
          newpassword.setPassword(password);
          newpassword.setUserName(userName);
          

@@ -4,7 +4,7 @@ public class NewPassword {
    
     private String userName;
  
-    private String captcha;
+    private long uid;
  
     private String password;
 
@@ -16,12 +16,12 @@ public class NewPassword {
 		this.userName = userName;
 	}
 
-	public String getCaptcha() {
-		return captcha;
+	public long getUid() {
+		return uid;
 	}
 
-	public void setCaptcha(String captcha) {
-		this.captcha = captcha;
+	public void setUid(long uid) {
+		this.uid = uid;
 	}
 
 	public String getPassword() {
@@ -31,6 +31,8 @@ public class NewPassword {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+
+
     
 }
