@@ -45,7 +45,8 @@ public class UserThirdLoginIT {
 
         	
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			Assert.fail();
 		}
 		
     	
