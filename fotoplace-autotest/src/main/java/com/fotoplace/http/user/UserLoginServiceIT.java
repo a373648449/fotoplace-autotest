@@ -18,28 +18,40 @@ public class UserLoginServiceIT {
 	 @Test(description = "用户登录-正常场景，创建人：郭强")	 
       public void UserLogin_normal() throws Exception {
     	
-    	String userlogin_Json = UserServiceJSON.UserloginJson("13774294435", "123456","23","2.1.2","Android4.3.3");
+		try {
+			
+			String userlogin_Json = UserServiceJSON.UserloginJson("13774294435", "123456","23","2.1.2","Android4.3.3");
+	    	
+	    	String url = "http://" + serverIP + "/api/user/user_login.php";
+	    	
+	    	ResultDO respone =  JsonRequestUtil.doPost(url, userlogin_Json);
+	    	
+	    	//判断http返回结果
+	     	int statusCode =  respone.getStatusCode();
+	    	//Assert.assertEquals(statusCode, 200);
+	    	
+	    	String reg =  respone.getResultString();
+	    	UserLogin userlogin =  new UserLogin();
+	    	userlogin = JSON.parseObject(reg, userlogin.getClass());
+	    	
+	    	Assert.assertEquals(userlogin.getUserName(), "13774294435");
+	    	Assert.assertEquals(userlogin.getPassword(), "123456");
+	    	Assert.assertEquals(userlogin.getSeriesNumber(), "23");
+	    	Assert.assertEquals(userlogin.getOsType(), "Android4.3.3");
+	    	Assert.assertEquals(userlogin.getClientVersion(), "2.1.2");
+	    	
+	        String userJson =  JSON.toJSONString(userlogin, true);
+	        if(userJson!=null){
+	        	
+		        System.out.println("json" +userJson);
+
+	        }
+	        
+		} catch (Exception e) {
+           e.printStackTrace();
+           Assert.fail();   
+		}
     	
-    	String url = "http://" + serverIP + "/api/user/user_login.php";
-    	
-    	ResultDO respone =  JsonRequestUtil.doPost(url, userlogin_Json);
-    	
-    	//判断http返回结果
-     	int statusCode =  respone.getStatusCode();
-    	//Assert.assertEquals(statusCode, 200);
-    	
-    	String reg =  respone.getResultString();
-    	UserLogin userlogin =  new UserLogin();
-    	userlogin = JSON.parseObject(reg, userlogin.getClass());
-    	
-    	Assert.assertEquals(userlogin.getUserName(), "13774294435");
-    	Assert.assertEquals(userlogin.getPassword(), "123456");
-    	Assert.assertEquals(userlogin.getSeriesNumber(), "23");
-    	Assert.assertEquals(userlogin.getOsType(), "Android4.3.3");
-    	Assert.assertEquals(userlogin.getClientVersion(), "2.1.2");
-    	
-        String userJson =  JSON.toJSONString(userlogin, true);
-        System.out.println("json" +userJson);
     	            	
     }
 }

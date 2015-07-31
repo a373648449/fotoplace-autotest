@@ -1,5 +1,7 @@
 
 package com.fotoplace.http.jsons;
+import javax.servlet.http.HttpSession;
+
 import com.alibaba.fastjson.JSON;
 import com.fotoplace.user.test.modl.NewPassword;
 import com.fotoplace.user.test.modl.UserLogin;

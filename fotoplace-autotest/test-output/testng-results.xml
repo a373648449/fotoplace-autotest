@@ -2,16 +2,24 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2042" started-at="2015-07-29T03:46:43Z" finished-at="2015-07-29T03:46:45Z">
+  <suite name="Default suite" duration-ms="25393" started-at="2015-07-31T07:44:39Z" finished-at="2015-07-31T07:45:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2042" started-at="2015-07-29T03:46:43Z" finished-at="2015-07-29T03:46:45Z">
-      <class name="com.fotoplace.http.user.UserLoginServiceIT">
-        <test-method status="FAIL" signature="UserLogin_normal()[pri:0, instance:com.fotoplace.http.user.UserLoginServiceIT@1b40d5f0]" name="UserLogin_normal" duration-ms="1977" started-at="2015-07-29T11:46:43Z" description="用户登录-正常场景，创建人：郭强" finished-at="2015-07-29T11:46:45Z">
-          <exception class="java.lang.NullPointerException">
+    <test name="Default test" duration-ms="25393" started-at="2015-07-31T07:44:39Z" finished-at="2015-07-31T07:45:04Z">
+      <class name="com.fotoplace.http.user.AddUserServiceIT">
+        <test-method status="FAIL" signature="addUser_normal()[pri:0, instance:com.fotoplace.http.user.AddUserServiceIT@10db82ae]" name="addUser_normal" duration-ms="25329" started-at="2015-07-31T15:44:39Z" description="新增用户-正常场景，创建人：郭强" finished-at="2015-07-31T15:45:04Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [200] but found [503]]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.fotoplace.http.user.UserLoginServiceIT.UserLogin_normal(UserLoginServiceIT.java:36)
+              <![CDATA[java.lang.AssertionError: expected [200] but found [503]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:370)
+	at org.testng.Assert.assertEquals(Assert.java:380)
+	at com.fotoplace.http.user.AddUserServiceIT.addUser_normal(AddUserServiceIT.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -38,11 +46,11 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UserLogin_normal -->
-      </class> <!-- com.fotoplace.http.user.UserLoginServiceIT -->
+        </test-method> <!-- addUser_normal -->
+      </class> <!-- com.fotoplace.http.user.AddUserServiceIT -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

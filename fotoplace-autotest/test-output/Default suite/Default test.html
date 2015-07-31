@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 29 11:46:43 CST 2015</td>
+<td>Started on:</td><td>Fri Jul 31 15:44:39 CST 2015</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2042 ms)</td>
+<tr><td>Total time:</td><td>25 seconds (25393 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,9 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.fotoplace.http.user.UserLoginServiceIT.UserLogin_normal()'><b>UserLogin_normal</b><br>Test class: com.fotoplace.http.user.UserLoginServiceIT<br>Test method: 用户登录-正常场景，创建人：郭强</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.fotoplace.http.user.UserLoginServiceIT.UserLogin_normal(UserLoginServiceIT.java:36)
+<td title='com.fotoplace.http.user.AddUserServiceIT.addUser_normal()'><b>addUser_normal</b><br>Test class: com.fotoplace.http.user.AddUserServiceIT<br>Test method: 新增用户-正常场景，创建人：郭强</td>
+<td><div><pre>java.lang.AssertionError: expected [200] but found [503]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:370)
+	at org.testng.Assert.assertEquals(Assert.java:380)
+	at com.fotoplace.http.user.AddUserServiceIT.addUser_normal(AddUserServiceIT.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -102,9 +107,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace254749889", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace254749889'><pre>java.lang.NullPointerException
-	at com.fotoplace.http.user.UserLoginServiceIT.UserLogin_normal(UserLoginServiceIT.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1703696921", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1703696921'><pre>java.lang.AssertionError: expected [200] but found [503]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:370)
+	at org.testng.Assert.assertEquals(Assert.java:380)
+	at com.fotoplace.http.user.AddUserServiceIT.addUser_normal(AddUserServiceIT.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,8 +140,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 </pre></div></td>
-<td>1</td>
-<td>com.fotoplace.http.user.UserLoginServiceIT@1b40d5f0</td></tr>
+<td>25</td>
+<td>com.fotoplace.http.user.AddUserServiceIT@10db82ae</td></tr>
 </table><p>
 </body>
 </html>
